@@ -13,6 +13,7 @@ export class RatsController extends BaseController {
         try {
             let rats = await ratsService.getRats()
             response.send(rats)
+            console.log('rats working');
         } catch (error) {
             next(error)
         }

@@ -1,8 +1,10 @@
+import { dbContext } from "../db/DbContext.js"
 
 class RatService {
 
-    async getRats(request, response, next) {
-
+    async getRats(searchQuery) {
+        const rats = await dbContext.Rat.find(searchQuery)
+        return rats
     }
 
 }
